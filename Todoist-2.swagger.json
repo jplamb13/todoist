@@ -1,0 +1,85 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Todoist -2",
+    "description": "",
+    "version": "1.0"
+  },
+  "host": "api.todoist.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/rest/v2/tasks": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "operationId": "CreateTask",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "type": "string",
+                  "description": "Name of Task"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Task Description"
+                },
+                "project_id": {
+                  "type": "integer",
+                  "description": "project_id",
+                  "default": 2255335313
+                },
+                "due_date": {
+                  "type": "string",
+                  "description": "duedate"
+                },
+                "labels": {
+                  "type": "string",
+                  "description": "Lables"
+                }
+              }
+            }
+          }
+        ],
+        "summary": "TaskName"
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
